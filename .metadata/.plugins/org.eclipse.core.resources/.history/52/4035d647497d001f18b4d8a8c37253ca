@@ -1,0 +1,22 @@
+package entity;
+
+public class UserEntity {
+	
+	private String username;
+	private String password;
+	private String name;
+	private int phone;
+	
+	public UserEntity() {
+	}
+
+	public UserEntity(String username, String password, String name, int phone) {
+		this.username = username;
+		this.password = password;
+		this.name = name;
+		this.phone = phone;
+	}
+	
+	
+	
+}

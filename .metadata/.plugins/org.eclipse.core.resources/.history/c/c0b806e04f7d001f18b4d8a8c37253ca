@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<form action="">
+		<div>
+			<label>Tên:</label>
+		</div>
+
+		<div>
+			<input placeholder="Mời nhập tên" type="text" name="ten">
+		</div>
+
+		<div>
+			<label>Tuổi</label>
+		</div>
+
+		<div>
+			<input placeholder="Mời nhập tuổi" type="number" name="tuoi">
+		</div>
+
+		<div>
+			<input type="radio" name="gioitinh" value="1"> Nam <input
+				type="radio" name="gioitinh" value="2"> Nữ
+		</div>
+
+		<div>
+			<label>Nơi sinh</label>
+		</div>
+
+		<div>
+			<select>
+				<option value="1">Hải Phòng</option>
+				<option value="2">Hà Nội</option>
+				<option value="3">Hồ Chí Minh</option>
+				<option value="4">Cần Thơ</option>
+				<option value="5">Đà Nẵng</option>
+			</select>
+		</div>
+
+		<button type="submit">Thêm</button>
+	</form>
+</body>
+</html>

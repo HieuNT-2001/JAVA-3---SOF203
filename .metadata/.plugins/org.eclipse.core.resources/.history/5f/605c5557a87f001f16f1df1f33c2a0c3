@@ -1,0 +1,85 @@
+package controllers;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import jakarta.websocket.Session;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Servlet implementation class FormServlet
+ */
+@WebServlet("/FormServlet")
+public class FormServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public FormServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("views/Form.jsp").forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		// Lấy thông tin từ Form
+		String ten = request.getParameter("ten");
+		String tuoi = request.getParameter("tuoi");
+		String gioiTinh = Integer.parseInt(request.getParameter("gioiTinh")) == 1 ? "Nam" : "Nữ";
+		int noiSinhPar = Integer.parseInt(request.getParameter("noiSinh"));
+		String noiSinh = "";
+		
+		// Lấy nơi sinh dựa trên giá trị của selectBox
+		switch (noiSinhPar) {
+		case 1:
+			noiSinh = "Hải Phòng";
+			break;
+		case 2:
+			noiSinh = "Hà Nội";
+			break;
+		case 3:
+			noiSinh = "Hồ Chí Minh";
+			break;
+		case 4:
+			noiSinh = "Cần Thơ";
+			break;
+		case 5:
+			noiSinh = "Đà Nẵng";
+			break;
+		default:
+			break;
+		}
+		
+		// Lấy session của người dùng
+		HttpSession session = request.getSession();
+			
+		// Lấy danh sách từ session hoặc tạo mới nếu chưa có
+		List<String[]> danhSach = (List<String[]>) session.getAttribute("danhSach);
+		
+		request.setAttribute("ten", ten);
+		request.setAttribute("tuoi", tuoi);
+		request.setAttribute("gioiTinh", gioiTinh);
+		request.setAttribute("noiSinh", noiSinh);	
+		request.getRequestDispatcher("views/TableSV.jsp").forward(request, response);
+	}
+
+}

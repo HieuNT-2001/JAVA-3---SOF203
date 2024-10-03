@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+		<div>
+			<label>Tên:</label>
+		</div>
+
+		<div>
+			<input placeholder="Mời nhập tên">
+		</div>
+		
+		<div><label>Tuổi</label></div>
+
+		<div>
+			<input placeholder="Mời nhập tuổi">
+		</div>
+
+	</form>
+</body>
+</html>
