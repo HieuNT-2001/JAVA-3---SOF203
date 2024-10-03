@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,25 +24,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="data" items="${danhSach }">
-				<!-- duyệt danh sách để in ra từng dòng -->
-				<tr>
-					<th scope="row">1</th>
-					<td>${data[0] }</td>
-					<td>${data[1] }</td>
-					<td>${data[2] }</td>
-					<td>${data[3] }</td>
-				</tr>
-			</c:forEach>
-			<!-- 
 			<tr>
-					<th scope="row">1</th>
-					<td>${ten }</td>
-					<td>${tuoi }</td>
-					<td>${gioiTinh }</td>
-					<td>${noiSinh }</td>
-				</tr> 
-			-->
+				<th scope="row">1</th>
+				<td>${ten }</td>
+				<td>${tuoi }</td>
+				<td>${gioiTinh }</td>
+				<td>${noiSinh }</td>
+			</tr>
 		</tbody>
 	</table>
 
