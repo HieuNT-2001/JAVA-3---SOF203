@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,15 +24,22 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-			</tr>
+			<c:forEach var="user" items="${listUser }" varStatus="status">
+				<tr>
+					<th scope="row">${status.count }</th>
+					<td>${user.id }</td>
+					<td>${user.name }</td>
+					<td>${user.email }</td>
+					<td>${user.type == 1 ? "Admin" : "User" }</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
-
+	<form action="./list-user" method="post">
+		<div>
+			<button type="submit" class="btn btn-primary">Add</button>
+		</div>
+	</form>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

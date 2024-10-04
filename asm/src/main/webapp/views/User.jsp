@@ -15,11 +15,12 @@
 
 <body>
 	<div class="container">
-		<form action="./Login" method="post">
+		<form action="./user" method="post">
+			<h6 class="text-danger">${error }</h6>
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">ID</label> <input
-					type="text" class="form-control" id="exampleInputEmail1" name="id"
-					aria-describedby="emailHelp" />
+					type="number" class="form-control" id="exampleInputEmail1"
+					name="id" aria-describedby="emailHelp" />
 				<div id="emailHelp" class="form-text"></div>
 			</div>
 			<div class="mb-3">
@@ -32,12 +33,14 @@
 				<input type="email" class="form-control" id="exampleInputPassword1"
 					name="email" />
 			</div>
-			<select class="form-select" aria-label="Default select example">
-				<option selected>Open this select menu</option>
+			<select class="form-select" aria-label="Default select example"
+				name="type">
 				<option value="1">Admin</option>
-				<option value="2">User</option>
+				<option value="2" selected>User</option>
 			</select>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<div>
+				<button type="submit" class="btn btn-primary">Add</button>
+			</div>
 		</form>
 	</div>
 	<script
