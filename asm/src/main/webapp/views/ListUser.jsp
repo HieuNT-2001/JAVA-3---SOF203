@@ -14,32 +14,34 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col">ID</th>
-				<th scope="col">Name</th>
-				<th scope="col">Email</th>
-				<th scope="col">Type</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="user" items="${listUser }" varStatus="status">
+	<div class="container">
+		<table class="table">
+			<thead>
 				<tr>
-					<th scope="row">${status.count }</th>
-					<td>${user.id }</td>
-					<td>${user.name }</td>
-					<td>${user.email }</td>
-					<td>${user.type == 1 ? "Admin" : "User" }</td>
+					<th scope="col">#</th>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">Type</th>
+					<th scope="col">Action</th>
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	<form action="./list-user" method="post">
-		<div>
-			<button type="submit" class="btn btn-primary">Add</button>
-		</div>
-	</form>
+			</thead>
+			<tbody>
+				<c:forEach var="user" items="${listUser }" varStatus="status">
+					<tr>
+						<th scope="row">${status.count }</th>
+						<td>${user.id }</td>
+						<td>${user.name }</td>
+						<td>${user.email }</td>
+						<td>${user.type == 1 ? "Admin" : "User" }</td>
+						<td scope="col"><a href="<c:url value="/add-user?id=${user.id }"/>"
+							class="btn btn-primary">Update</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+		<a href="<c:url value="/add-user"/>" class="btn btn-primary">Add</a>
+	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

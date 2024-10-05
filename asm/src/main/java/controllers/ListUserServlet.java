@@ -19,7 +19,7 @@ import entity.UserEntity;
 @WebServlet("/list-user")
 public class ListUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private List<UserEntity> listUser = new ArrayList<>();
+	public static List<UserEntity> listUser = new ArrayList<>();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -58,7 +58,7 @@ public class ListUserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// Chuyen sang trang nhap thong tin user moi
-		request.getRequestDispatcher("views/User.jsp").forward(request, response);
+		request.getRequestDispatcher("views/AddUser.jsp").forward(request, response);
 	}
 
 }
