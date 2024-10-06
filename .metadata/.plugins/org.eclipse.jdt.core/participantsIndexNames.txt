@@ -3,6 +3,8 @@ C:\Users\thanh\Desktop\java3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsear
 \HocJava4\src\main\java
 C:\Users\thanh\Desktop\java3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3956294659.index
 \lab2\src\main\java
+C:\Users\thanh\Desktop\java3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2866897043.index
+\AssignmentGD1\src\main\java
 C:\Users\thanh\Desktop\java3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4138462307.index
 \asm\src\main\java
 C:\Users\thanh\Desktop\java3\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3283956087.index

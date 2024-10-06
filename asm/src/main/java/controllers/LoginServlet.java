@@ -1,5 +1,6 @@
 package controllers;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,7 +29,6 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.getRequestDispatcher("views/Login.jsp").forward(request, response);
 	}
 
@@ -41,12 +41,11 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-
-		// User: admin và password: 123
-		if (username.equalsIgnoreCase("admin") && password.equals("123")) {
+		// user:admin pass:admin123
+		if (username.equals("admin") && password.equals("123")) {
 			response.sendRedirect(request.getContextPath() + "/list-user");
 		} else {
-			request.setAttribute("error", "Sai tên đăng nhập");
+			request.setAttribute("error", "Sai tên đăng nhập hoặc mật khẩu");
 			request.getRequestDispatcher("views/Login.jsp").forward(request, response);
 		}
 	}

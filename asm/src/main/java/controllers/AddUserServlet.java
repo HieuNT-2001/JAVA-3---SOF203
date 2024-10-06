@@ -5,60 +5,45 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 
 import entity.UserEntity;
 
 /**
- * Servlet implementation class UserServlet
+ * Servlet implementation class AddUserServlet
  */
 @WebServlet("/add-user")
 public class AddUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AddUserServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public AddUserServlet() {
-		super();
-		// TODO Auto-generated constructor stub
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("views/User.jsp").forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("views/AddUser.jsp").forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// Lay du lieu tu User.jsp
-		String inputID = request.getParameter("id");
 		String name = request.getParameter("name");
+		int id = Integer.parseInt(request.getParameter("id"));
 		String email = request.getParameter("email");
 		int type = Integer.parseInt(request.getParameter("type"));
-
-		// Kiem tra trong du lieu
-		if (!inputID.isBlank() && !name.isBlank() && !email.isBlank()) {
-			HttpSession session = request.getSession();
-			int id = Integer.parseInt(inputID);
-			session.setAttribute("user", new UserEntity(id, name, email, type)); // Lưu thông tin user mới vào session
-			response.sendRedirect(request.getContextPath() + "/list-user"); // Điều hướng sang list-user
-		} else {
-			request.setAttribute("error", "Bạn phải nhập đầy đủ thông tin");
-			request.getRequestDispatcher("views/AddUser.jsp").forward(request, response);
-		}
+		UserEntity user = new UserEntity(id, name, email, type);
+		ListUserServlet.listUser.add(user);
+		response.sendRedirect(request.getContextPath() + "/list-user");
 	}
 
 }
