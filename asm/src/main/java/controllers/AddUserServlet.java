@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import dao.UserDao;
 import entity.UserEntity;
 
 /**
@@ -15,6 +16,7 @@ import entity.UserEntity;
 @WebServlet("/add-user")
 public class AddUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	UserDao userDAO = new UserDao();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -38,11 +40,10 @@ public class AddUserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String name = request.getParameter("name");
-		int id = Integer.parseInt(request.getParameter("id"));
 		String email = request.getParameter("email");
 		int type = Integer.parseInt(request.getParameter("type"));
-		UserEntity user = new UserEntity(id, name, email, type);
-		ListUserServlet.listUser.add(user);
+		UserEntity user = new UserEntity(0, name, email, type);
+		userDAO.add(user);
 		response.sendRedirect(request.getContextPath() + "/list-user");
 	}
 

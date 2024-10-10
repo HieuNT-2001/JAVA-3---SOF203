@@ -1,6 +1,8 @@
 package controllers;
 
 import java.util.*;
+
+import dao.UserDao;
 import entity.UserEntity;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,7 +17,7 @@ import java.io.IOException;
 @WebServlet("/list-user")
 public class ListUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static List<UserEntity> listUser = new ArrayList<UserEntity>();
+	UserDao userDAO = new UserDao();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -23,9 +25,7 @@ public class ListUserServlet extends HttpServlet {
     public ListUserServlet() {
         super();
         // TODO Auto-generated constructor stub
-        listUser.add(new UserEntity(1, "Hiếu", "hieu@gmail.com", 1));
-        listUser.add(new UserEntity(2, "Nam", "nam@gmail.com", 2));
-        listUser.add(new UserEntity(3, "Hà", "ha@gmail.com", 2));
+        
     }
 
 	/**
@@ -33,7 +33,7 @@ public class ListUserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setAttribute("listUser", this.listUser);
+		request.setAttribute("listUser", userDAO.getAll());
 		request.getRequestDispatcher("views/ListUser.jsp").forward(request, response);
 	}
 

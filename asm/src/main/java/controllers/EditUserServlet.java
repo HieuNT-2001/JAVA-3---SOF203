@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import dao.UserDao;
 import entity.UserEntity;
 
 /**
@@ -15,6 +16,7 @@ import entity.UserEntity;
 @WebServlet("/edit-user")
 public class EditUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	UserDao userDAO = new UserDao();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -32,12 +34,7 @@ public class EditUserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("id"));
-		for (UserEntity user : ListUserServlet.listUser) {
-			if (user.getId() == id) {
-				request.setAttribute("user", user);
-				break;
-			}
-		}
+		request.setAttribute("user", userDAO.find(id));
 		request.getRequestDispatcher("views/EditUser.jsp").forward(request, response);
 	}
 
@@ -49,17 +46,14 @@ public class EditUserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("id"));
-		for (UserEntity user : ListUserServlet.listUser) {
-			if (user.getId() == id) {
-				String name = request.getParameter("name");
-				String email = request.getParameter("email");
-				int type = Integer.parseInt(request.getParameter("type"));
-				user.setName(name);
-				user.setEmail(email);
-				user.setType(type);
-				break;
-			}
-		}
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		int type = Integer.parseInt(request.getParameter("type"));
+		UserEntity user = userDAO.find(id);
+		user.setName(name);
+		user.setEmail(email);
+		user.setType(type);
+		userDAO.update(user);
 		response.sendRedirect(request.getContextPath() + "/list-user");
 	}
 

@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import dao.UserDao;
 import entity.UserEntity;
 
 /**
@@ -15,6 +16,7 @@ import entity.UserEntity;
 @WebServlet("/remove-user")
 public class RemoveUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	UserDao userDAO = new UserDao();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -32,12 +34,7 @@ public class RemoveUserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("id"));
-		for (UserEntity user : ListUserServlet.listUser) {
-			if (user.getId() == id) {
-				ListUserServlet.listUser.remove(user);
-				break;
-			}
-		}
+		userDAO.remove(id);
 		response.sendRedirect(request.getContextPath() + "/list-user");
 	}
 

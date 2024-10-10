@@ -18,11 +18,6 @@
 		<h2>Thông tin User</h2>
 		<form action="./add-user" method="post">
 			<div class="mb-3">
-				<label for="exampleInputEmail1" class="form-label">Id </label> <input
-					name="id" type="text" class="form-control" id="exampleInputEmail1"
-					aria-describedby="emailHelp">
-			</div>
-			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Name </label> <input
 					name="name" type="text" class="form-control"
 					id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -33,7 +28,8 @@
 					id="exampleInputEmail1" aria-describedby="emailHelp">
 			</div>
 			<div class="mb-3">
-				<select name="type" class="form-select" aria-label="Default select example">
+				<select name="type" class="form-select"
+					aria-label="Default select example">
 					<option value="1" selected>Admin</option>
 					<option value="2">User</option>
 				</select>

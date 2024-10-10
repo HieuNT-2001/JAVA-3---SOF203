@@ -17,11 +17,6 @@
 	<div class="container">
 		<h2>Đang sửa user có id bằng</h2>
 		<form action="./edit-user" method="post">
-			<!-- <div class="mb-3">
-				<label for="exampleInputEmail1" class="form-label">Id </label> <input
-					name="id" type="text" class="form-control" id="exampleInputEmail1"
-					aria-describedby="emailHelp" value="${user.id }">
-			</div> -->
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Name </label> <input
 					name="name" type="text" class="form-control"
