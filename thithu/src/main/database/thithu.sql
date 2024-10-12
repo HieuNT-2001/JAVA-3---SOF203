@@ -22,7 +22,7 @@ GO
 -- Create the table in the specified schema
 CREATE TABLE [dbo].[ban]
 (
-    [Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), -- Primary Key column
+    [Id] INT NOT NULL PRIMARY KEY, -- Primary Key column
     [name] NVARCHAR(50) NOT NULL,
     [hobby] NVARCHAR(50) NOT NULL,
     [gender] BIT NOT NULL
