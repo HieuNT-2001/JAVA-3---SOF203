@@ -33,14 +33,14 @@ GO
 -- Insert rows into table 'ban' in schema '[dbo]'
 INSERT INTO [dbo].[ban]
 ( -- Columns to insert data into
- [name], [hobby], [gender]
+ [id], [name], [hobby], [gender]
 )
 VALUES
 ( -- First row: values for the columns in the list above
- 'Mark', 'sing', 1
+ 1, 'Mark', 'sing', 1
 ),
 ( -- Second row: values for the columns in the list above
- 'Otto', 'dance', 1
+ 2, 'Otto', 'dance', 1
 )
 -- Add more rows here
 GO
