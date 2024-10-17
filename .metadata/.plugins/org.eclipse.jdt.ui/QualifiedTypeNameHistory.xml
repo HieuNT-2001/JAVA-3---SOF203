@@ -20,8 +20,8 @@
     <fullyQualifiedTypeName name="jakarta.servlet.jsp.jstl.sql.Result"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.env.IUpdatableModule.UpdateKind"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="entity.Ban"/>
     <fullyQualifiedTypeName name="dao.banDAO"/>
+    <fullyQualifiedTypeName name="entity.Ban"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

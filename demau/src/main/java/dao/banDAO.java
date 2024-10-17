@@ -12,8 +12,8 @@ import utils.Connect;
 public class banDAO {
 
 	private static final String SELECT_ALL = "SELECT * FROM ban";
-	private static final String INSERT = "INSERT INTO ban (id, name, hobby, gender) VALUES (?, ?, ?, ?)";
-	private static final String DELETE = "DELETE FROM ban WHERE id = ?";
+	private static final String INSERT = "INSERT INTO ban (Ma, Ten, SoThich, GioiTinh) VALUES (?, ?, ?, ?)";
+	private static final String DELETE = "DELETE FROM ban WHERE Id = ?";
 
 	public static List<Ban> getAll() {
 		List<Ban> list = new ArrayList<Ban>();
@@ -23,9 +23,10 @@ public class banDAO {
 			while (rs.next()) {
 				Ban entity = new Ban();
 				entity.setId(rs.getInt("Id"));
-				entity.setName(rs.getString("name"));
-				entity.setHobby(rs.getString("hobby"));
-				entity.setGender(rs.getBoolean("gender"));
+				entity.setMa(rs.getString("Ma"));
+				entity.setTen(rs.getString("Ten"));
+				entity.setSoThich(rs.getString("SoThich"));
+				entity.setGioiTinh(rs.getInt("GioiTinh"));
 				list.add(entity);
 			}
 		} catch (Exception e) {
@@ -38,10 +39,10 @@ public class banDAO {
 	public static void add(Ban entity) {
 		try (Connection con = Connect.getConnect()) {
 			PreparedStatement stmt = con.prepareStatement(INSERT);
-			stmt.setInt(1, entity.getId());
-			stmt.setString(2, entity.getName());
-			stmt.setString(3, entity.getHobby());
-			stmt.setBoolean(4, entity.isGender());
+			stmt.setString(1, entity.getMa());
+			stmt.setString(2, entity.getTen());
+			stmt.setString(3, entity.getSoThich());
+			stmt.setInt(4, entity.getGioiTinh());
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception

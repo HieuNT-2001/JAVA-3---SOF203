@@ -6,7 +6,7 @@ public class Connect {
 
     private final static String URL
             = "jdbc:sqlserver://localhost:1433;"
-            + "database=banbe;"
+            + "database=PTPM_FINALLY_JAVA_SOF3011;"
             + "user=sa;"
             + "password=123456;"
             + "encrypt=true;"

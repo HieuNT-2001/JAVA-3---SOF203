@@ -33,26 +33,10 @@ public class FormServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String url = request.getServletPath();
-		
+
 		if (url.contains("/ban/hien-thi")) {
 			request.setAttribute("list", banDAO.getAll());
 			request.getRequestDispatcher("../views/Form.jsp").forward(request, response);
-		}
-		
-		if (url.contains("/ban/add")) {
-			int id = Integer.parseInt(request.getParameter("id"));
-			String name  = request.getParameter("name");
-			String hobby  = request.getParameter("hobby");
-			boolean gender = request.getParameter("gender").equals("1");
-			Ban entity = new Ban(id, name, hobby, gender);
-			banDAO.add(entity);
-			response.sendRedirect("../ban/hien-thi");
-		}
-		
-		if (url.contains("/ban/remove")) {
-			int id = Integer.parseInt(request.getParameter("id"));
-			banDAO.remove(id);
-			response.sendRedirect("../ban/hien-thi");
 		}
 	}
 
@@ -63,7 +47,23 @@ public class FormServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String url = request.getServletPath();
+
+		if (url.contains("/ban/add")) {
+			String id = request.getParameter("ma");
+			String name = request.getParameter("ten");
+			String hobby = request.getParameter("soThich");
+			int gender = Integer.parseInt(request.getParameter("gioiTinh"));
+			Ban entity = new Ban(0, id, name, hobby, gender);
+			banDAO.add(entity);
+			response.sendRedirect("../ban/hien-thi");
+		}
+
+		if (url.contains("/ban/remove")) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			banDAO.remove(id);
+			response.sendRedirect("../ban/hien-thi");
+		}
 	}
 
 }

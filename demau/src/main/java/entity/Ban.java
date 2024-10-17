@@ -3,20 +3,22 @@ package entity;
 public class Ban {
 
 	private int id;
-	private String name;
-	private String hobby;
-	private boolean gender;
+	private String ma;
+	private String ten;
+	private String soThich;
+	private int gioiTinh;
 
 	public Ban() {
 		super();
 	}
 
-	public Ban(int id, String name, String hobby, boolean gender) {
+	public Ban(int id, String ma, String ten, String soThich, int gioiTinh) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.hobby = hobby;
-		this.gender = gender;
+		this.ma = ma;
+		this.ten = ten;
+		this.soThich = soThich;
+		this.gioiTinh = gioiTinh;
 	}
 
 	public int getId() {
@@ -27,28 +29,36 @@ public class Ban {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getMa() {
+		return ma;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMa(String ma) {
+		this.ma = ma;
 	}
 
-	public String getHobby() {
-		return hobby;
+	public String getTen() {
+		return ten;
 	}
 
-	public void setHobby(String hobby) {
-		this.hobby = hobby;
+	public void setTen(String ten) {
+		this.ten = ten;
 	}
 
-	public boolean isGender() {
-		return gender;
+	public String getSoThich() {
+		return soThich;
 	}
 
-	public void setGender(boolean gender) {
-		this.gender = gender;
+	public void setSoThich(String soThich) {
+		this.soThich = soThich;
+	}
+
+	public int getGioiTinh() {
+		return gioiTinh;
+	}
+
+	public void setGioiTinh(int gioiTinh) {
+		this.gioiTinh = gioiTinh;
 	}
 
 }
