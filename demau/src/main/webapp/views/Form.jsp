@@ -13,7 +13,7 @@
 
     <body>
       <div class="container mt-5">
-        <form action="../ban/add" method="post">
+        <form action="../ban/add" method="post" onsubmit="return confirm('Bạn có muốn thêm không')">
           <div class="mb-3">
             <label for="id" class="form-label">Mã</label>
             <input type="text" class="form-control" id="ma" name="ma" required />
@@ -37,7 +37,7 @@
           </div>
           <br />
 
-          <button type="submit" class="btn btn-primary" onclick="return confirm('Bạn có muốn thêm không')">ADD</button>
+          <button type="submit" class="btn btn-primary">ADD</button>
         </form>
 
         <table class="table">
@@ -60,10 +60,9 @@
                 <td>${entity.soThich }</td>
                 <td>${entity.gioiTinh == 1 ? 'Nam' : 'Nữ' }</td>
                 <td>
-                  <form action="../ban/remove" method="post">
+                  <form action="../ban/remove" method="post" onsubmit="return confirm('Bạn có muốn xóa không')">
                     <input type="hidden" name="id" value="${entity.id}">
-                    <button type="submit" class="btn btn-primary"
-                      onclick="return confirm('Bạn có muốn xóa không')">DELETE</button>
+                    <button type="submit" class="btn btn-primary">DELETE</button>
                   </form>
                 </td>
               </tr>
