@@ -48,12 +48,40 @@ public class SanPhamServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String url = request.getServletPath();
+		String loiMa = "";
+		String loiTen = "";
+		String loiSoLuong = "";
+		boolean isError = false;
 
 		if (url.contains("/sanpham/add")) {
 			String ma = request.getParameter("ma");
 			String ten = request.getParameter("ten");
 			int soLuong = Integer.parseInt(request.getParameter("so-luong"));
 			int trangThai = Integer.parseInt(request.getParameter("trang-thai"));
+
+			if (ma.isBlank()) {
+				loiMa = "Chưa nhập mã";
+				isError = true;
+			}
+
+			if (ten.isBlank()) {
+				loiTen = "Chưa nhập tên";
+				isError = true;
+			}
+
+			if (loiSoLuong.isBlank()) {
+				loiSoLuong = "Chưa nhập số lượng";
+				isError = true;
+			}
+			
+			if (isError) {
+				request.setAttribute("loiMa", loiMa);
+				request.setAttribute("loiTen", loiTen);
+				request.setAttribute("loiSoLuong", loiSoLuong);
+				request.getRequestDispatcher("../views/view.jsp").forward(request, response);
+				return;
+			}
+
 			SanPham sp = new SanPham(0, ma, ten, soLuong, trangThai);
 			SanPhamDAO.add(sp);
 			response.sendRedirect("../sanpham/hien-thi");

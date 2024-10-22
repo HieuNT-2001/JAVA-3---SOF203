@@ -16,17 +16,17 @@
         <h1>DANH SÁCH SẢN PHẨM</h1>
         <form action="../sanpham/add" method="post" onsubmit="return confirm('Bạn có muốn thêm không')">
           <div class="mb-3">
-            <label for="ma" class="form-label">Mã sản phẩm</label>
+            <label for="ma" class="form-label">Mã sản phẩm</label> <span>${loiMa }</span>
             <input type="text" class="form-control" id="ma" name="ma" required />
           </div>
 
           <div class="mb-3">
-            <label for="ten" class="form-label">Tên sản phẩm</label>
+            <label for="ten" class="form-label">Tên sản phẩm</label> <span>${loiTen }</span>
             <input type="text" class="form-control" id="ten" name="ten" required />
           </div>
 
           <div class="mb-3">
-            <label for="so-luong" class="form-label">Số lượng</label>
+            <label for="so-luong" class="form-label">Số lượng</label> <span>${loiSoLuong }</span>
             <input type="number" class="form-control" id="so-luong" name="so-luong" required />
           </div>
 
