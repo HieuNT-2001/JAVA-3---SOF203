@@ -16,17 +16,19 @@
     <fullyQualifiedTypeName name="entity.Ban"/>
     <fullyQualifiedTypeName name="jakarta.websocket.Session"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.jsp.jstl.sql.Result"/>
+    <fullyQualifiedTypeName name="dao.sachDAO"/>
+    <fullyQualifiedTypeName name="entity.sach"/>
+    <fullyQualifiedTypeName name="java.lang.Float"/>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="utils.Connect"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.jsp.jstl.sql.Result"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.nio.channels.Pipe.SourceChannel"/>
-    <fullyQualifiedTypeName name="dao.sachDAO"/>
-    <fullyQualifiedTypeName name="entity.sach"/>
-    <fullyQualifiedTypeName name="java.lang.Float"/>
+    <fullyQualifiedTypeName name="entity.XeMay"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.lang.Boolean"/>
+    <fullyQualifiedTypeName name="dao.XeMayDAO"/>
 </qualifiedTypeNameHistroy>
