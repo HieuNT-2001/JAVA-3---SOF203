@@ -10,8 +10,7 @@
       <!-- Bootstrap CSS -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
       <!-- CSS của DataTables -->
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-      <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
     </head>
 
     <body>
@@ -87,23 +86,20 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
       <!-- jQuery -->
-      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
       <!-- JS của DataTables -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-      <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-      <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
       <script>
         $(document).ready(function () {
-          // Kích hoạt DataTable cho bảng với ID #myTable
-          $('#myTable').DataTable({
-            "paging": true,           // Kích hoạt phân trang
-            "searching": true,        // Kích hoạt tìm kiếm
-            "ordering": true,         // Kích hoạt sắp xếp
-            "pageLength": 5          // Số lượng bản ghi trên mỗi trang
+          $("#myTable").DataTable({
+            paging: true, // Bật phân trang
+            pageLength: 5, // Số dòng trên mỗi trang
+            lengthMenu: [5, 10, 25, 50], // Tùy chọn số dòng trên mỗi trang
+            pagingType: "full_numbers", // Kiểu phân trang đầy đủ
           });
         });
-      </script>
       </script>
 
     </body>
