@@ -264,7 +264,7 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_OOEgj5AXEe-8rfmbRWhWfg" elementId="org.eclipse.ui.editorss" selectedElement="_OOEgkJAXEe-8rfmbRWhWfg">
-      <children xsi:type="basic:PartStack" xmi:id="_OOEgkJAXEe-8rfmbRWhWfg" elementId="PartStack@37083af6" selectedElement="_AZ4gsJBtEe--YK0166jDLQ">
+      <children xsi:type="basic:PartStack" xmi:id="_OOEgkJAXEe-8rfmbRWhWfg" elementId="PartStack@37083af6" selectedElement="_x-2FYJBqEe--YK0166jDLQ">
         <tags>EditorStack</tags>
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <children xsi:type="basic:Part" xmi:id="_x-2FYJBqEe--YK0166jDLQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Connect.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
@@ -290,12 +290,6 @@
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_AZ4gsJBtEe--YK0166jDLQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Screen.jsp" iconURI="platform:/plugin/org.eclipse.jst.jsp.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;Screen.jsp&quot; partName=&quot;Screen.jsp&quot; title=&quot;Screen.jsp&quot; tooltip=&quot;demau3/src/main/webapp/views/Screen.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/demau3/src/main/webapp/views/Screen.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;711&quot; selectionTopPixel=&quot;405&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>removeOnHide</tags>
-          <tags>org.eclipse.jst.jsp.core.jspsource.source</tags>
         </children>
       </children>
     </sharedElements>
@@ -525,7 +519,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OOEhRJAXEe-8rfmbRWhWfg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_afEBMJBqEe--YK0166jDLQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_OOIL8ZAXEe-8rfmbRWhWfg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ihPAAJGrEe-LF4AxPh9QLQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_OOIL8ZAXEe-8rfmbRWhWfg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OOEhUpAXEe-8rfmbRWhWfg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -533,8 +527,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OOEhVJAXEe-8rfmbRWhWfg" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_afEBNpBqEe--YK0166jDLQ" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" command="_OOIJ2JAXEe-8rfmbRWhWfg"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_afEBN5BqEe--YK0166jDLQ" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_OOIKfpAXEe-8rfmbRWhWfg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ihQOIJGrEe-LF4AxPh9QLQ" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_OOIJ2JAXEe-8rfmbRWhWfg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ihQOIZGrEe-LF4AxPh9QLQ" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_OOIKfpAXEe-8rfmbRWhWfg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OOEhWJAXEe-8rfmbRWhWfg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -549,7 +543,7 @@
       <children xsi:type="menu:ToolBar" xmi:id="_OOEho5AXEe-8rfmbRWhWfg" elementId="org.eclipse.search.searchActionSet">
         <tags>Draggable</tags>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_OOEhqJAXEe-8rfmbRWhWfg" elementId="org.eclipse.ui.edit.text.actionSet.presentation" visible="false">
+      <children xsi:type="menu:ToolBar" xmi:id="_OOEhqJAXEe-8rfmbRWhWfg" elementId="org.eclipse.ui.edit.text.actionSet.presentation">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OOEhrZAXEe-8rfmbRWhWfg" elementId="org.eclipse.wst.server.ui.internal.webbrowser.actionSet">
@@ -564,7 +558,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OOEhtZAXEe-8rfmbRWhWfg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_afEBPZBqEe--YK0166jDLQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_OOILlJAXEe-8rfmbRWhWfg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ihQ1MJGrEe-LF4AxPh9QLQ" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_OOILlJAXEe-8rfmbRWhWfg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_OOEhwJAXEe-8rfmbRWhWfg" elementId="org.eclipse.mylyn.builds.ui.editors.Build" visible="false">
         <tags>Draggable</tags>
